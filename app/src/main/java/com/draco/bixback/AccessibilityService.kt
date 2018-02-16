@@ -13,8 +13,10 @@ import java.util.*
 
 class AccessibilityService : AccessibilityService() {
 
-    val bixPress = "BixbyEventHandler: :Ph::task :: handleKeyEvent :: isConsumed false"
-    val logcatCommand = "logcat -s BixbyEventHandler -d -t 100"
+    //val bixPress = "BixbyEventHandler: :Ph::task :: handleKeyEvent :: isConsumed false"
+    val bixPress = "UITask  : :Ph::delivery KeyEvent:ACTION_DOWN"
+    //val logcatCommand = "logcat -s BixbyEventHandler -d -t 100"
+    val logcatCommand = "logcat -s UITask -d -t 100"
 
     private val minSpace = 500
     private val timerMs: Long = 100
