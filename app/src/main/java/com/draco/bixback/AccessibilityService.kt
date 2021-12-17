@@ -41,13 +41,13 @@ class AccessibilityService : AccessibilityService() {
         if (action == "flash") {
             toggleTorch()
         } else {
-            GlobalTask(this, action).execute()
+            GlobalTask(this, action!!).execute()
         }
     }
 
     private fun toggleTorch() {
         val mCameraManager = getSystemService(Context.CAMERA_SERVICE) as CameraManager
-        if (mCameraManager.getCameraCharacteristics(mCameraManager.cameraIdList[0]).get(CameraCharacteristics.FLASH_INFO_AVAILABLE)) {
+        if (mCameraManager.getCameraCharacteristics(mCameraManager.cameraIdList[0]).get(CameraCharacteristics.FLASH_INFO_AVAILABLE) == true) {
             if (torchState) {
                 mCameraManager.setTorchMode(mCameraManager.cameraIdList[0], false)
             } else {
